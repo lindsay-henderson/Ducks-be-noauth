@@ -9,8 +9,8 @@ import cors from 'cors'
 import ('./config/database.js')
 
 // import routers
-import { router as indexRouter } from './routes/index.js'
-import { router as usersRouter } from './routes/users.js'
+import { router as contactsRouter } from './routes/contacts.js'
+
 
 // create the express app
 const app = express()
@@ -29,8 +29,7 @@ app.use(
 )
 
 // mount imported routes
-app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/api/contacts', contactsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
