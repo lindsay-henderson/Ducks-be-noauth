@@ -33,8 +33,29 @@ function show(req, res) {
   })
 }
 
+function update(req, res) {
+  Contact.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(contact => res.json(contact))
+  .catch(err => {
+    console.log(err)
+    res.json(err)
+  })
+}
+
+function deleteContact(req, res) {
+  Contact.findByIdAndDelete(req.params.id)
+  .then(contact => res.json(contact))
+  .catch(err => {
+    console.log(err)
+    res.json(err)
+  })
+}
+
 export {
   index,
   create,
   show,
+  update,
+  deleteContact as delete,
+
 }
