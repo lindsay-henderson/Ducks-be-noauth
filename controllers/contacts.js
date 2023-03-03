@@ -57,5 +57,4 @@ export {
   show,
   update,
   deleteContact as delete,
-
 }
