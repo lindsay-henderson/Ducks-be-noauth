@@ -10,6 +10,7 @@ import ('./config/database.js')
 
 // import routers
 import { router as contactsRouter } from './routes/contacts.js'
+import {router as ordersRouter} from './routes/orders.js'
 
 
 // create the express app
@@ -31,6 +32,7 @@ app.use(
 
 // mount imported routes
 app.use('/api/contacts', contactsRouter)
+app.use('/api/orders', ordersRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

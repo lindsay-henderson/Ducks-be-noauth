@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const orderSchema = new Schema ({
   pet:{type: String, required: true},
-  client: {type: Schema.Types.ObjectId, ref: 'Client'},
-  images: {type: String},
+  client: {type: String},
+  photos: {type: String},
   notes: {type: String},
 },
   {timestamps: true}
